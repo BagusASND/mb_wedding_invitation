@@ -155,7 +155,7 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="https://wa.me/6287870769164?text=Hai%20Mara,%20selamat%20ya%20atas%20pernikahannya.">
+                  <a href="https://wa.me/6287870769164?text=Hai%20Bagus,%20selamat%20ya%20atas%20pernikahannya.">
                     <div class="social-wrapper bg-wa">
                       <i class="fab fa-whatsapp"></i>
                     </div>
@@ -180,15 +180,29 @@
   </div>
 </div>
 
+<div class="modal fade" id="greetings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content border-white">
+      <div class="modal-body text-center">
+        <p class="text-xlg fw3">Hai, <span id="results">{}</span></p>
+        <span>Kamu dapat undangan nih.</span>
+      </div>
+      <div class="modal-footer border-top-0">
+        <button type="button" class="btn btn-sm btn-primary btn-block rounded-pill" data-dismiss="modal">Lihat Undangan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="dist/js/jquery.min.js"></script>
 <script src="dist/js/bootstrap.bundle.min.js"></script>
-<!-- Plugin -->
-<script src="dist/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- Custom JS -->
 <script type="text/javascript">
     window.onload = function(){
+        $('#greetings').modal('show');
+
         var countDownDate = new Date("Nov 16, 2019 08:00:00").getTime();
 
         // Update the count down every 1 second
@@ -215,7 +229,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "Time Up!";
+                document.getElementById("demo").innerHTML = "It's The Day!";
             }
         }, 1000);
     }
@@ -227,6 +241,12 @@
             $('header').removeClass('active');
         }
     });
+
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var c = url.searchParams.get("name");
+    $('#results').html(c);
+
 </script>
 </body>
 </html>
