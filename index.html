@@ -15,7 +15,7 @@
 
   <title>Mara & Bagus</title>
 </head>
-<body>
+<body class="position-fixed w-100">
 
 <header class="fixed-top">
   <div class="container">
@@ -180,15 +180,15 @@
   </div>
 </div>
 
-<div class="modal fade" id="greetings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content border-white">
-      <div class="modal-body text-center">
-        <p class="text-xlg fw3">Hai, <span id="results">{}</span></p>
-        <span>Kamu dapat undangan nih.</span>
-      </div>
-      <div class="modal-footer border-top-0">
-        <button type="button" class="btn btn-sm btn-primary btn-block rounded-pill" data-dismiss="modal">Lihat Undangan</button>
+<div class="container-fluid overlay-cover position-fixed w-100 h-100">
+  <div class="row h-100">
+    <div class="col-12 col-sm-12 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 align-self-center">
+      <div class="pt-15 pb-15 bg-white shadow-lg rounded">
+        <div class="col-12 text-center">
+          <p class="text-xlg fw3 mb-5">Hai, <span id="results">{}</span></p>
+          <span>Kamu dapat undangan nih.</span>
+          <button id="closeCover" type="button" class="btn btn-sm btn-primary btn-block rounded-pill mt-30">Lihat Undangan</button>
+        </div>
       </div>
     </div>
   </div>
@@ -201,8 +201,6 @@
 <!-- Custom JS -->
 <script type="text/javascript">
     window.onload = function(){
-
-        $('#greetings').modal({backdrop: 'static', keyboard: false});
 
         var countDownDate = new Date("Nov 22, 2019 08:00:00").getTime();
 
@@ -247,6 +245,11 @@
     var url = new URL(url_string);
     var c = url.searchParams.get("name");
     $('#results').html(c);
+
+    $('#closeCover').click(function () {
+        $('body').removeClass('position-fixed w-100');
+        $('.overlay-cover').addClass('d-none');
+    });
 
 </script>
 </body>

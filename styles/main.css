@@ -246,6 +246,13 @@ body {
   font-size: 11px;
 }
 
+.overlay-cover{
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,.9);
+  z-index: 1100;
+}
+
 @media (min-width: 1366px) {
   .m-container {
     max-width: 414px;
