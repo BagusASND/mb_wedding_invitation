@@ -466,8 +466,10 @@ body {
 }
 
 .btn-change-color{
-  animation: colorchange 5s;
+  animation: colorchange 5s infinite;
   -webkit-animation: colorchange 5s infinite;
+  -moz-animation: colorchange 5s infinite;
+  -o-animation: colorchange 5s infinite;
 }
 
 /*Icon Style*/
@@ -1756,20 +1758,44 @@ a:hover {
 
 @keyframes colorchange
 {
-  0%   {background: #e6bb67;}
-  25%  {background: #dddddd;}
-  50%  {background: #aeffe9;}
-  75%  {background: #e1ffb8;}
-  100% {background: #e6bb67;}
+  0%   {background-color: #e6bb67;}
+  25%  {background-color: #dddddd;}
+  50%  {background-color: #aeffe9;}
+  75%  {background-color: #e1ffb8;}
+  100% {background-color: #e6bb67;}
 }
 
-@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+@-webkit-keyframes colorchange
 {
-  0%   {background: #e6bb67;}
-  25%  {background: #dddddd;}
-  50%  {background: #aeffe9;}
-  75%  {background: #e1ffb8;}
-  100% {background: #e6bb67;}
+  0%   {background-color: #e6bb67;}
+  25%  {background-color: #dddddd;}
+  50%  {background-color: #aeffe9;}
+  75%  {background-color: #e1ffb8;}
+  100% {background-color: #e6bb67;}
+}
+
+@-moz-keyframes colorchange {
+  0%   {background-color: #e6bb67;}
+  25%  {background-color: #dddddd;}
+  50%  {background-color: #aeffe9;}
+  75%  {background-color: #e1ffb8;}
+  100% {background-color: #e6bb67;}
+}
+
+@-o-keyframes colorchange {
+  0%   {background-color: #e6bb67;}
+  25%  {background-color: #dddddd;}
+  50%  {background-color: #aeffe9;}
+  75%  {background-color: #e1ffb8;}
+  100% {background-color: #e6bb67;}
+}
+
+@-ms-keyframes colorchange {
+  0%   {background-color: #e6bb67;}
+  25%  {background-color: #dddddd;}
+  50%  {background-color: #aeffe9;}
+  75%  {background-color: #e1ffb8;}
+  100% {background-color: #e6bb67;}
 }
 
 
