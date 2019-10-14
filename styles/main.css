@@ -465,6 +465,11 @@ body {
   border-color: #dddddd !important;
 }
 
+.btn-change-color{
+  animation: colorchange 5s;
+  -webkit-animation: colorchange 5s infinite;
+}
+
 /*Icon Style*/
 .linked-soc li .soc-container.fb {
   background-color: #2A5297;
@@ -1645,6 +1650,7 @@ a:hover {
   position: absolute;
   bottom: 120px;
   width: 100%;
+  z-index: 11;
 }
 
 .bars-menu {
@@ -1746,6 +1752,27 @@ a:hover {
 .countdown_wrapper span {
   font-size: 54px;
 }
+
+
+@keyframes colorchange
+{
+  0%   {background: #e6bb67;}
+  25%  {background: #dddddd;}
+  50%  {background: #aeffe9;}
+  75%  {background: #e1ffb8;}
+  100% {background: #e6bb67;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: #e6bb67;}
+  25%  {background: #dddddd;}
+  50%  {background: #aeffe9;}
+  75%  {background: #e1ffb8;}
+  100% {background: #e6bb67;}
+}
+
+
 
 @media (max-width: 991px) {
   .countdown_wrapper span {
