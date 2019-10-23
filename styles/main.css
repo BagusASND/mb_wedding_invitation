@@ -1807,4 +1807,8 @@ a:hover {
   .countdown_wrapper p {
     font-size: 8px;
   }
+
+  .page-header .page-header-image {
+    background-position: right;
+  }
 }
